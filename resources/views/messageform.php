@@ -21,7 +21,7 @@ echo Form::hidden('user_id', 1);
 	</tr>
 	<tr>
 		<td><?php echo Form::label('message','Message:') ?></td>
-		<td><?php echo Form::text('message',$message_model->message) ?></td>
+		<td><?php echo Form::textarea('message',$message_model->message) ?></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
