@@ -1,4 +1,7 @@
 
-<?php echo $menu; ?>
+<?php 
+echo $header;
+echo $menu; 
+?>
 
 Home
