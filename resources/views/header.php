@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<header>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- skeleton -->
+	<link href="<?php echo asset('libs/skeleton/css/normalize.css') ?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo asset('libs/skeleton/css/skeleton.css') ?>" rel="stylesheet" type="text/css">
+
+	<link href="<?php echo asset('css/default.css') ?>" rel="stylesheet" type="text/css">
+
+</header>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="twelve columns"><h3>Masa</h3></div>
+	</div>
+</div>

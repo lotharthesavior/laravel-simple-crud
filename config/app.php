@@ -145,7 +145,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-	'Illuminate\Html\HtmlServiceProvider',
+	   'Illuminate\Html\HtmlServiceProvider',
+
+       'DaveJamesMiller\Breadcrumbs\ServiceProvider',
     ],
 
     /*
@@ -195,8 +197,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-	'Form'=> 'Illuminate\Html\FormFacade',
-	'HTML'=> 'Illuminate\Html\HtmlFacade',
+    	'Form'         => 'Illuminate\Html\FormFacade',
+    	'HTML'         => 'Illuminate\Html\HtmlFacade',
+        'Breadcrumbs'  => 'DaveJamesMiller\Breadcrumbs\Facade',
     ],
 
 ];

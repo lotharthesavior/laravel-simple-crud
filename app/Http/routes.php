@@ -12,35 +12,36 @@
 */
 
 Route::get('/', function () {
-    return view('home',array(
-    	'header' => view('header'),
-    	'menu' => view('menu')
-    ));
+    return view('home',[
+        'header' => view('header'),
+        'breadcrumb' => view('breadcrumb',['breadcrumb'=>Breadcrumbs::render('home')]),
+        'menu' => view('menu'),
+        'footer' => view('footer')
+    ]);
 });
 
-Route::get('/home', function () {
-    return view('home',array(
-    	'header' => view('header'),
-    	'menu' => view('menu')
-    ));
-});
+Route::get('/home', ['as'=>'home', 'uses'=>function () {
+    return view('home',[
+        'header' => view('header'),
+        'breadcrumb' => view('breadcrumb',['breadcrumb'=>Breadcrumbs::render('home')]),
+        'menu' => view('menu'),
+        'footer' => view('footer')
+    ]);
+}]);
 
-// Auth
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+// Authentication routes...
+Route::get('auth/login', ['as'=>'login', 'uses'=>'Auth\AuthController@getLogin']);
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::get('/messages/{message?}', ['uses' => 'MessageController@index']);
+// Registration routes...
+Route::get('auth/register', ['as'=>'register', 'uses'=>'Auth\AuthController@getRegister']);
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('/newmessage', ['uses' => 'MessageController@create']);
-
-Route::post('/newmessage', ['uses' => 'MessageController@store']);
-
-Route::get('/editmessage/{id}/{message?}', ['uses' => 'MessageController@edit']);
-
-Route::get('/editmessage/{id}/{message?}', ['uses' => 'MessageController@edit']);
-
+// Messages Crud routes...
+Route::get('/messages/{message?}', ['as'=>'messages', 'uses' => 'MessageController@index']);
+Route::get('/newmessage', ['as'=>'newmessage', 'uses' => 'MessageController@create']);
+Route::post('/newmessage', ['as'=>'newmessagepost', 'uses' => 'MessageController@store']);
+Route::get('/editmessage/{id}/{message?}', ['as'=>'editmessage', 'uses' => 'MessageController@edit']);
 Route::put('/editmessage/{id}', ['uses' => 'MessageController@update']);
-
 Route::delete('/deletemessage/{id}', ['uses' => 'MessageController@destroy']);

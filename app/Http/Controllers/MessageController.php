@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Breadcrumbs;
 
 class MessageController extends Controller
 {
@@ -19,10 +20,12 @@ class MessageController extends Controller
         $messages = \App\Message::get();
 
         return view('messages',[
-            'header'    => view('header'),
-            'menu'      => view('menu'),
-            'message'   => $message,
-            'messages'  => $messages
+            'header'        => view('header'),
+            'breadcrumb'    => view('breadcrumb',['breadcrumb'=>Breadcrumbs::render('messages')]),
+            'menu'          => view('menu'),
+            'message'       => $message,
+            'messages'      => $messages,
+            'footer'        => view('footer')
         ]);
     }
 
@@ -40,9 +43,11 @@ class MessageController extends Controller
 
         return view('messageform',[
             'header'        => view('header'),
+            'breadcrumb'    => view('breadcrumb',['breadcrumb'=>Breadcrumbs::render('newmessage')]),
             'menu'          => view('menu'),
             'message'       => $message,
-            'message_model' => $message_model
+            'message_model' => $message_model,
+            'footer'        => view('footer')
         ]);
     }
 
@@ -99,10 +104,12 @@ class MessageController extends Controller
 
         return view('messageform',[
             'header'        => view('header'),
+            'breadcrumb'    => view('breadcrumb',['breadcrumb'=>Breadcrumbs::render('editmessage')]),
             'menu'          => view('menu'),
             'message'       => $message,
             'id'            => $id,
-            'message_model' => $message_model
+            'message_model' => $message_model,
+            'footer'        => view('footer')
         ]);
     }
 

@@ -1,0 +1,131 @@
+
+/* 
+	Table of contents:;
+
+	1. .menu
+		1.1. .menu ul
+			1.1.1. .menu ul li
+				1.1.1.1. .menu ul li a
+		1.2. .menu .auth-side
+
+	2. -- Content --
+		2.1. .content
+		2.2. .aside-list-title
+		2.3. .list-message-slot
+		2.4. .list-options-column
+		2.5. .list-button
+		2.6. .breadcrumb ol
+			2.6.1. .breadcrumb ol li
+				2.6.1.1. .breadcrumb ol li::before
+
+	3. -- Forms --
+		3.1. .label-div
+		3.2. .input-div
+		3.3. .list-delete-option-form
+			3.3.1. .danger-button
+	
+	4. @media 550px
+		4.1. .label-div
+		4.2. .menu .auth-side
+		4.3. .aside-list-title
+		4.4. .list-message-slot
+*/
+
+.menu{
+	border-bottom:1px solid #000;
+}
+	.menu ul{
+		list-style: none;
+	}
+		.menu ul li{
+			float:left;
+			margin-right:10px;
+		}
+			.menu ul li a{
+				text-decoration: none;
+				color: #000;
+			}
+				.menu ul li a:hover{
+					text-decoration: underline;
+				}
+	.menu .auth-side{
+		text-align:left;
+	}
+
+/* -- Content -- */
+	.content{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.aside-list-title{
+		text-align:left;
+		line-height: 50px;
+	}
+
+	.list-message-slot{
+		text-align: left;
+		line-height: 50px;
+	}
+
+	.list-options-column{
+		text-align: right;
+	}
+
+	.list-button{
+		margin-bottom:0px;
+	}
+
+	.breadcrumb ol{
+		list-style: none;
+	}
+
+		.breadcrumb ol li{
+			float:left;
+		}
+			.breadcrumb ol li::before{
+				margin-left:4px;
+				margin-right:4px;
+				content: '>';
+			}
+/* -- /Content -- */
+
+/* -- Forms -- */
+	.label-div{
+		text-align: left;
+	}
+
+	.input-div{
+		text-align: left;
+	}
+
+	.list-delete-option-form{
+		display: inline;
+	}
+		.danger-button{
+			background-color: #FF3333 !important;
+			color: #fff !important;
+			border-color: #FF3366 !important;
+		}
+/* -- /Forms -- */
+
+/* Larger than tablet */
+@media (min-width: 550px) {
+
+	.label-div{
+		text-align: right;
+	}
+
+	.menu .auth-side{
+		text-align:right;
+	}
+
+	.aside-list-title{
+		text-align: right;
+	}
+
+	.list-message-slot{
+		text-align: center;
+	}
+
+}
