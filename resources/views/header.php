@@ -7,6 +7,8 @@
 
 	<link href="<?php echo asset('css/default.css') ?>" rel="stylesheet" type="text/css">
 
+	<title>Masa</title>
+
 </header>
 <body>
 
